@@ -20,7 +20,7 @@ public class CodingInterviews17 {
         return result;
     }
 
-    // 输入控制台
+    // 
     public String[] printNumbersString(int n) {
         return null;
     }
