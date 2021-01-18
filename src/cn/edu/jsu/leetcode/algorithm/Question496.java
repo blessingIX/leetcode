@@ -1,6 +1,7 @@
 package cn.edu.jsu.leetcode.algorithm;
 
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.Stack;
 
 /**
@@ -11,6 +12,7 @@ import java.util.Stack;
 public class Question496 {
 //    https://leetcode-cn.com/problems/next-greater-element-i/
     public int[] nextGreaterElement(int[] nums1, int[] nums2) {
+        // 双栈解法
         int[] result = new int[nums1.length];
         Stack<Integer> stack = new Stack<>();
         Stack<Integer> temp = new Stack<>();
@@ -32,6 +34,26 @@ public class Question496 {
             }
         }
         return result;
+    }
+
+    public int[] nextGreaterElementStackAndHashMap(int[] nums1, int[] nums2) {
+//        栈+哈希表 解法
+        int[] res = new int[nums1.length];
+        Stack<Integer> stack = new Stack<>();
+        HashMap<Integer, Integer> hashMap = new HashMap<>();
+        for (int i : nums2) {
+            while (!stack.isEmpty() && i > stack.peek()) {
+                hashMap.put(stack.pop(), i);
+            }
+            stack.push(i);
+        }
+        while (!stack.isEmpty()) {
+            hashMap.put(stack.pop(), -1);
+        }
+        for (int i = 0; i < res.length; i++) {
+            res[i] = hashMap.get(nums1[i]);
+        }
+        return res;
     }
 
     public int[] nextGreaterElementTraverse(int[] nums1, int[] nums2) {
@@ -59,6 +81,10 @@ public class Question496 {
                 {
                         {4,1,2},
                         {1,2,3,4}
+                },
+                {
+                        {1,3,5,2,4},
+                        {6,5,4,3,2,1,7}
                 }
         };
         int i = 1;
@@ -67,6 +93,7 @@ public class Question496 {
             System.out.println("nums1 = " + Arrays.toString(aCase[0]));
             System.out.println("nums2 = " + Arrays.toString(aCase[1]));
             System.out.println(Arrays.toString(question.nextGreaterElementTraverse(aCase[0], aCase[1])));
+            System.out.println(Arrays.toString(question.nextGreaterElementStackAndHashMap(aCase[0], aCase[1])));
         }
     }
 }
