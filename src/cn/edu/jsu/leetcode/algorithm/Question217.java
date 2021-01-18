@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.HashSet;
 
 /**
- * @description:
+ * @description: 217. 存在重复元素
  * @author: blessing
  * @create: 2021-01-14 17:36
  */

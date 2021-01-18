@@ -38,6 +38,7 @@ public class Question496 {
 
     public int[] nextGreaterElementStackAndHashMap(int[] nums1, int[] nums2) {
 //        栈+哈希表 解法
+//        https://www.bilibili.com/video/BV1sy4y1q79M?p=29
         int[] res = new int[nums1.length];
         Stack<Integer> stack = new Stack<>();
         HashMap<Integer, Integer> hashMap = new HashMap<>();
