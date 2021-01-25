@@ -59,8 +59,8 @@ public class Question139 {
                 {{"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaab"},{"a","aa","aaa","aaaa","aaaaa","aaaaaa","aaaaaaa","aaaaaaaa","aaaaaaaaa","aaaaaaaaaa"}}
         };
 
-        for (int i = 0; i < cases.length; i++) {
-            System.out.println(question.wordBreak(cases[i][0][0], new ArrayList<>(Arrays.asList(cases[i][1]))));
+        for (String[][] aCase : cases) {
+            System.out.println(question.wordBreak(aCase[0][0], new ArrayList<>(Arrays.asList(aCase[1]))));
         }
     }
 }
