@@ -28,7 +28,7 @@ public class Question42 {
     }
 
     public int trapDp(int[] height) {
-        // 动态规划
+        // 动态规划 官方题解
         // 1ms
         int ans = 0;
         int len = height.length;
